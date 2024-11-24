@@ -55,7 +55,7 @@ function clearForm() {
     document.getElementById('productForm').reset();
 }
 
-    // Deleting a product from a table
+// Deleting a product from a table
 
 function deleteProduct(event, productName) {
     const row = event.target.closest('tr');
