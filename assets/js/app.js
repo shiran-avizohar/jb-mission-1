@@ -45,7 +45,8 @@ function renderProductToTable(product) {
         <td>${product.productPrice}</td>
         <td>${product.productCategory}</td>
         <td><img src="${product.imageUrl}" alt="Product Image" width="100"></td>
-        <td><button class="delete-btn" onclick="deleteProduct(event, '${product.productName}')">Delete</button></td>
+        <td><button class="btn btn-danger btn-sm delete-btn" onclick="deleteProduct(event, '${product.productName}')">Delete</button></td>
+       
         `;
 
     tableBody.appendChild(row);
