@@ -4,6 +4,10 @@ function collectData() {
     const productCategory = document.getElementById('productCategory').value; 
     const imageUrl = document.getElementById('imageUrl').value
 
+    if (productPrice <= 0) {
+        alert('Please enter a valid price.');
+        return null;
+    }
 
     return {
         productName: productName,
@@ -41,7 +45,6 @@ function renderProductToTable(product) {
         <td>${product.productCategory}</td>
         <td><img src="${product.imageUrl}" alt="Product Image" width="100"></td>
         <td><button class="delete-btn" onclick="deleteProduct(event, '${product.productName}')">Delete</button></td>
-
         `;
 
     tableBody.appendChild(row);
@@ -52,9 +55,9 @@ function clearForm() {
     document.getElementById('productForm').reset();
 }
 
+    // Deleting a product from a table
 
 function deleteProduct(event, productName) {
-    // Deleting a product from a table
     const row = event.target.closest('tr');
     row.remove();
 
