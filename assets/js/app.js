@@ -1,3 +1,4 @@
+
 function collectData() {
     const productName = document.getElementById('productName').value
     const productPrice = parseInt(document.getElementById('productPrice').value)
@@ -56,7 +57,6 @@ function clearForm() {
 }
 
 // Deleting a product from a table
-
 function deleteProduct(event, productName) {
     const row = event.target.closest('tr');
     row.remove();
@@ -66,6 +66,7 @@ function deleteProduct(event, productName) {
     localStorage.setItem('products', JSON.stringify(products)); 
 }
 
+//// Function to load products from localStorage
 function loadProductsFromLocalStorage() {
     const productsJSON = localStorage.getItem('products');
     if (productsJSON) {
@@ -73,6 +74,7 @@ function loadProductsFromLocalStorage() {
         products.forEach(product => renderProductToTable(product));
     }
 } 
+
 window.onload = function() {
 loadProductsFromLocalStorage();
 }
